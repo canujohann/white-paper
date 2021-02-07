@@ -24,8 +24,8 @@ Une infrastructure Blockchain fidèle à l’essence de la technologie à savoir
 * Un modèle économique du Token natif de la Blockchain Ternoa proposant aux investisseurs une trajectoire de création de valeur claire, équitable et directement corrélée au succès du projet ; 
 
 Ces principes sont mis en oeuvre grâce à :
-La Blockchain Ternoa qui permet le stockage et la transmission sécurisée des données.
-Un kit de développement de logiciel (Software Development Kit, SDK) permettant de faciliter le développement des applications mobiles ou Web rendant ainsi accessibles à tous les cas d’usages de la Blockchain Ternoa.
+- La Blockchain Ternoa qui permet le stockage et la transmission sécurisée des données.
+- Un kit de développement de logiciel (Software Development Kit, SDK) permettant de faciliter le développement des applications mobiles ou Web rendant ainsi accessibles à tous les cas d’usages de la Blockchain Ternoa.
 
 Ces deux couches technologiques, développées par Capsule Corp., sont compatibles et interagissent avec l’infrastructure Web que nous connaissons aujourd’hui. 
 
@@ -33,7 +33,7 @@ Ces deux couches technologiques, développées par Capsule Corp., sont compatibl
 
 Capsule Corp. développera à partir du SDK sa propre application, appelée « Application Ternoa » dans la description de ce cas d’usage.
 
-L’Application Ternoa permet de créer des “Capsules Temporelles” pour chiffrer, stocker, et transférer des données de manière sécurisée, et dans le temps long. Ces Capsules Temporelles sont des jetons non-fongibles émis sur la blockchain Ternoa.
+L’Application Ternoa permet de créer des “Capsules Temporelles” pour chiffrer, stocker, et transférer des données de manière sécurisée et à très long terme. Ces Capsules Temporelles sont des jetons non-fongibles émis sur la blockchain Ternoa.
 
 *Fig. 1: Schéma fonctionnel d’utilisation de la Blockchain TERNOA par l’Application Ternoa.*
 
@@ -81,7 +81,7 @@ L’utilisation du POW pour les réseaux Blockchain est consubstantiel au Bitcoi
 
 Face aux limites et contraintes de la POW, la POS a été pensée pour résoudre le problème de consommation d’énergie du POW. Elle est devenue la méthode de validation de nombreuses nouvelles blockchains et a notamment récemment gagné en popularité avec son adoption par Ethereum pour sa version 2.0, non sans débat au sein de la communauté. Plutôt que de demander aux mineurs d'effectuer des calculs énergivores dont les résultats sont inutiles, les utilisateurs se rendent éligibles à la validation de blocs en possédant une certaine quantité de la cryptomonnaie. Le principal argument avancé par les défenseurs de la POS est l'utilité apportée à la communauté par ces utilisateurs qui permettent un certain niveau de stabilité du cours de la monnaie. 
 
-La Blockchain Ternoa s'appuie sur la NPoS qui est une variante du POS. La particularité du NPOS repose sur un processus de sélection des validateurs qui sont autorisés à participer au protocole de consensus et se rapproche en cela de la Delegated-Proof-of-Stake (DPoS) utilisée notamment par la Blockchain Tezos.
+La Blockchain Ternoa s'appuie sur la **Nominated** Proof of Stack (NPoS) qui est une variante du POS. La particularité du NPOS repose sur un processus de sélection des validateurs qui sont autorisés à participer au protocole de consensus et se rapproche en cela de la Delegated-Proof-of-Stake (DPoS) utilisée notamment par la Blockchain Tezos.
 
 Dans ce système de validation des transactions, il existe des Validator et des Nominator qui sécurisent la Blockchain Ternoa de façon complémentaire.
 
@@ -159,7 +159,8 @@ De point de vue de la Blockchain Ternoa, une création de capsule consiste à :
 
 ## Structure du NFT et Fichiers
 
-Tokens non-fongibles (NFT)
+### Non Fongible Tokens (NFT)
+
 Le module Non-fungible-token fournit des fonctions de base pour créer et gérer des NFT tels que create_class, transfer, mint, burn, destroy_class. Ternoa utilise les NFT comme capsules temporelles.
 
 Les NFT les plus répandus sont les ERC721. On peut ajouter à l'intérieur les métas que nous souhaitons et dans notre cas, voici leurs compositions :
@@ -176,7 +177,7 @@ Les NFT basiques seront designées par TERNOA et une place de marché des NFT se
 
 ## Décentralisation des données
 
-La Blockchain Ternoa est pensée pour être une Parachain du réseau Polkadot. Ainsi, elle aura son propre réseau de serveurs et utilisera en même temps le réseau Ternoa pour décentraliser les données.
+La Blockchain Ternoa est pensée pour être une Parachain du réseau Polkadot. Ainsi, elle aura son propre réseau de serveurs et utilisera en même temps le réseau Polkadot pour décentraliser les données.
 
 *Fig. 3 - système de relais parachains polkadot.*
 
@@ -220,11 +221,18 @@ Les autres shards seront stockées sur les Masternodes. Si le propriétaire du N
 
 ## Comportement des masternodes
 
-Les masternodes en NPoS détiennent des parties de Shamir sans jamais détenir l'ensemble des clés. Et ne sont pas en mesure de savoir à qui elles appartiennent. Chaque masternode est indépendant et n'a pas connaissance de la data des autres Masternodes. Les Masternodes ont la consigne de retourner les shards sur demande du propriétaire du NFT concerné, si et seulement si les conditions de la transmission sont remplies.
+Les masternodes en NPoS détiennent des parties de Shamir sans jamais détenir l'ensemble des clés et ne sont pas en mesure de savoir à qui elles appartiennent. Chaque masternode est indépendant et n'a pas connaissance de la data des autres Masternodes. Les Masternodes ont la consigne de retourner les shards sur demande du propriétaire du NFT concerné, si et seulement si les conditions de la transmission sont remplies.
 
-Ajout d'un message : l'ajout d'un message consiste à : Chiffrer un fichier (json/base64/media) avec la clé symétrique. Ajout de ce document sur le serveur de fichier et modification de l'arbre.
+### Ajout d'un message
 
-Effacer un message: L'effacement d'un message consiste à mettre à jour l'arbre à fichier.
+L'ajout d'un message consiste à :
+
+- Chiffrer un fichier (json/base64/media) avec la clé symétrique. 
+- Ajouter de ce document sur le serveur de fichier et modification de l'arbre.
+
+### Effacement un message
+
+L'effacement d'un message consiste à mettre à jour l'arbre à fichier.
 
 ## Gouvernance
 
